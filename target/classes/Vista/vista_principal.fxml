@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" prefHeight="500.0" prefWidth="757.0" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.GestorInformeController">
+   <children>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="485.0" prefWidth="745.0">
+         <children>
+            <ComboBox fx:id="cbAlumno" disable="true" layoutX="151.0" layoutY="230.0" prefHeight="26.0" prefWidth="200.0" promptText="Seleccione alumno..." />
+            <ComboBox fx:id="cbModulo" disable="true" layoutX="408.0" layoutY="230.0" prefHeight="25.0" prefWidth="182.0" promptText="Seleccione módulo..." />
+            <Button fx:id="btnGenerarInforme" layoutX="255.0" layoutY="285.0" mnemonicParsing="false" onAction="#btnOnGenerarInforme" text="Generar informe" />
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="246.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../report/img/logoCentro.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="btnExportar" layoutX="380.0" layoutY="285.0" mnemonicParsing="false" onAction="#btnOnExportar" text="Exportar informe" />
+            <RadioButton fx:id="rbInformeModulo" layoutX="150.0" layoutY="162.0" mnemonicParsing="false" text="Informe actividades por módulo">
+               <toggleGroup>
+                  <ToggleGroup fx:id="rbInformes" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="rbActaCurso" layoutX="401.0" layoutY="129.0" mnemonicParsing="false" text="Acta del curso académico" toggleGroup="$rbInformes" />
+            <RadioButton fx:id="rbInformeNotasFinales" layoutX="401.0" layoutY="162.0" mnemonicParsing="false" text="Informe notas finales por alumno" toggleGroup="$rbInformes" />
+            <RadioButton fx:id="rbInformeAlumnado" layoutX="152.0" layoutY="129.0" mnemonicParsing="false" selected="true" text="Informe de datos del alumnado" toggleGroup="$rbInformes" />
+            <CheckBox fx:id="chInformePDF" layoutX="251.0" layoutY="341.0" mnemonicParsing="false" selected="true" text="PDF" />
+            <CheckBox fx:id="chInformeXLS" layoutX="380.0" layoutY="341.0" mnemonicParsing="false" text="XLS" />
+            <ImageView fitHeight="34.0" fitWidth="29.0" layoutX="306.0" layoutY="335.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../report/img/pdf.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="34.0" fitWidth="29.0" layoutX="434.0" layoutY="335.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../report/img/xls.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+</VBox>
